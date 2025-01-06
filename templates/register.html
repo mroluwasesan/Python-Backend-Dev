@@ -1,0 +1,51 @@
+{% load static %}
+
+
+<style>h4{color: red;} </style>
+
+{%for message in messages%}
+<h4>{{message}}</h4>
+{%endfor%}
+
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Login Form Design | CodeLab</title>
+      <link rel='stylesheet' href="{% static 'assets/css/style.css'%}">
+   </head>
+   <body>
+      <div class="wrapper">
+         <div class="title">
+            Register below
+         </div>
+
+         <form action="register" method="POST">
+            {%csrf_token%}
+            <div class="field">
+               <input type="text" name="username" required>
+               <label>Username</label>
+            </div>
+            <div class="field">
+                <input type="text" name="email" required>
+                <label>Email</label>
+             </div>
+            <div class="field">
+               <input type="password" name="password" required>
+               <label>Password</label>
+            </div>
+            <div class="field">
+               <input type="password" name="confirm_password" required>
+               <label>Confirm password</label>
+            </div>
+            <div class="field">
+               <input type="submit" value="Register">
+            </div>
+            <div class="signup-link">
+               Already a member? <a href="login">Login</a>
+            </div>
+         </form>
+      </div>
+   </body>
+</html>
